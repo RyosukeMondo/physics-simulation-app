@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GLBLoader from './GLBLoader';
 import { usePerformance } from '../hooks/usePerformance';
 import './ControlPanel.css';
@@ -8,7 +8,7 @@ import { SimulationError } from '../utils/errorHandling';
 interface ControlPanelProps {
   onAddBall: () => void;
   onAddBox: () => void;
-  onLoadGLB: (url: string, file: File, collisionType?: 'box' | 'convex') => void;
+  onLoadGLB: (url: string, file: File, collisionType?: 'box' | 'convex', scale?: number) => void;
   onToggleSimulation: () => void;
   onReset: () => void;
   isRunning: boolean;
@@ -37,6 +37,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   onError
 }) => {
   const { fps, frameTime, memoryUsage } = usePerformance();
+  const [glbScale, setGlbScale] = useState<number>(1);
   return (
     <div className="control-panel">
       <h3>Physics Simulation Controls</h3>
@@ -67,13 +68,6 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         >
           Add Square {!canAddBox && '(Limit)'}
         </button>
-        
-        <GLBLoader
-          onLoadGLB={onLoadGLB}
-          onError={onError}
-          disabled={!isRunning || !canAddGLB}
-          limitReached={!canAddGLB}
-        />
       </div>
 
       <div className="button-group simulation-controls">
@@ -141,6 +135,31 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             ))}
           </div>
         )}
+      </div>
+
+      {/* GLB controls at the bottom: Load + Scale slider */}
+      <div className="info-section glb-controls-section" style={{ marginTop: '12px' }}>
+        <div className="info-title">GLB Model</div>
+        <GLBLoader
+          onLoadGLB={(url, file, collisionType) => onLoadGLB(url, file, collisionType, glbScale)}
+          onError={onError}
+          disabled={!isRunning || !canAddGLB}
+          limitReached={!canAddGLB}
+        />
+        <div className="info-item" style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8 }}>
+          <span className="info-label">Scale:</span>
+          <input
+            type="range"
+            min={0.1}
+            max={100}
+            step={0.1}
+            value={glbScale}
+            onChange={(e) => setGlbScale(Number(e.target.value))}
+            title="Scale of loaded GLB models"
+            style={{ flex: 1 }}
+          />
+          <span className="info-value" style={{ width: 60, textAlign: 'right' }}>{glbScale.toFixed(2)}x</span>
+        </div>
       </div>
     </div>
   );

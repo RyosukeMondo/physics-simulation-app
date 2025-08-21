@@ -35,14 +35,15 @@ function App() {
   const [isInitializing] = useState(false);
   const [debugPanelVisible, setDebugPanelVisible] = useState(false);
 
-  const handleLoadGLB = (url: string, file: File, collisionType?: 'box' | 'convex') => {
+  const handleLoadGLB = (url: string, file: File, collisionType?: 'box' | 'convex', scale?: number) => {
     debugLogger.info('Loading GLB file', { fileName: file.name, size: file.size, collisionType });
     
     try {
+      const uniformScale = typeof scale === 'number' && scale > 0 ? [scale, scale, scale] as [number, number, number] : undefined;
       if (collisionType) {
-        addGLBWithCollisionType(url, file, collisionType);
+        addGLBWithCollisionType(url, file, collisionType, uniformScale ? { scale: uniformScale } : undefined);
       } else {
-        addGLB(url, file);
+        addGLB(url, file, uniformScale ? { scale: uniformScale } : undefined);
       }
       debugLogger.info('GLB loading initiated successfully');
     } catch (err) {
