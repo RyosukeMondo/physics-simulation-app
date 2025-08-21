@@ -1,11 +1,12 @@
 import React from 'react';
 import GLBLoader from './GLBLoader';
+import { usePerformance } from '../hooks/usePerformance';
 import './ControlPanel.css';
 
 interface ControlPanelProps {
   onAddBall: () => void;
   onAddBox: () => void;
-  onLoadGLB: (url: string, file: File) => void;
+  onLoadGLB: (url: string, file: File, collisionType?: 'box' | 'convex') => void;
   onToggleSimulation: () => void;
   onReset: () => void;
   isRunning: boolean;
@@ -21,6 +22,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   isRunning,
   objectCount
 }) => {
+  const { fps, frameTime, memoryUsage } = usePerformance();
   return (
     <div className="control-panel">
       <h3>Physics Simulation Controls</h3>
@@ -69,11 +71,38 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       </div>
       
       <div className="info-panel">
-        <div className="object-count">
-          Objects: {objectCount}
+        <div className="info-section">
+          <div className="info-title">Simulation</div>
+          <div className="info-item">
+            <span className="info-label">Objects:</span>
+            <span className="info-value">{objectCount}</span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Status:</span>
+            <span className={`info-value status-${isRunning ? 'running' : 'paused'}`}>
+              {isRunning ? 'Running' : 'Paused'}
+            </span>
+          </div>
         </div>
-        <div className="simulation-status">
-          Status: {isRunning ? 'Running' : 'Paused'}
+        
+        <div className="info-section performance-section">
+          <div className="info-title">Performance</div>
+          <div className="info-item">
+            <span className="info-label">FPS:</span>
+            <span className={`info-value fps-${fps >= 50 ? 'good' : fps >= 30 ? 'ok' : 'poor'}`}>
+              {fps}
+            </span>
+          </div>
+          <div className="info-item">
+            <span className="info-label">Frame:</span>
+            <span className="info-value">{frameTime}ms</span>
+          </div>
+          {memoryUsage !== undefined && memoryUsage > 0 && (
+            <div className="info-item">
+              <span className="info-label">Memory:</span>
+              <span className="info-value">{memoryUsage}MB</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

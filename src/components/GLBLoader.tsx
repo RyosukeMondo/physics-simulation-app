@@ -13,7 +13,9 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [collisionType, setCollisionType] = useState<'box' | 'convex'>('box');
 
   const handleFileSelect = () => {
@@ -41,15 +43,39 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
 
     setIsLoading(true);
     setError(null);
+    setSuccess(null);
+    setLoadingProgress(0);
 
     try {
+      // Simulate loading progress for better UX
+      const progressInterval = setInterval(() => {
+        setLoadingProgress(prev => {
+          if (prev >= 90) {
+            clearInterval(progressInterval);
+            return 90;
+          }
+          return prev + 10;
+        });
+      }, 100);
+
       // Create object URL for the file
       const url = URL.createObjectURL(file);
       
       // Call the parent callback with the URL, file, and collision type
       onLoadGLB(url, file, collisionType);
       
+      // Complete the progress
+      clearInterval(progressInterval);
+      setLoadingProgress(100);
+      
+      // Show success message
+      setSuccess(`Loaded ${file.name} successfully!`);
       setIsLoading(false);
+      
+      // Clear success message after 3 seconds
+      setTimeout(() => {
+        setSuccess(null);
+      }, 3000);
       
       // Clear the input so the same file can be selected again
       if (fileInputRef.current) {
@@ -58,6 +84,7 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load GLB file');
       setIsLoading(false);
+      setLoadingProgress(0);
     }
   };
 
@@ -90,19 +117,28 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
           disabled={disabled || isLoading}
           title={disabled ? "Resume simulation to load GLB models" : "Load a GLB or GLTF model file"}
         >
-          {isLoading ? 'Loading...' : 'Load GLB'}
+          {isLoading ? `Loading... ${loadingProgress}%` : 'Load GLB'}
         </button>
+        
+        {isLoading && (
+          <div className="loading-progress">
+            <div 
+              className="progress-bar" 
+              style={{ width: `${loadingProgress}%` }}
+            />
+          </div>
+        )}
       </div>
       
       {error && (
-        <div className="error-message" style={{ 
-          color: 'red', 
-          fontSize: '12px', 
-          marginTop: '4px',
-          maxWidth: '200px',
-          wordWrap: 'break-word'
-        }}>
+        <div className="feedback-message error-message">
           {error}
+        </div>
+      )}
+      
+      {success && (
+        <div className="feedback-message success-message">
+          {success}
         </div>
       )}
     </div>
