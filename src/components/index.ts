@@ -1,4 +1,3 @@
 // Export all components from this directory
-// Components will be added in subsequent tasks
-
-export {};
+export { default as PhysicsCanvas } from './PhysicsCanvas';
+export { default as PhysicsBall } from './PhysicsBall';
