@@ -13,6 +13,11 @@ interface ControlPanelProps {
   onReset: () => void;
   isRunning: boolean;
   objectCount: number;
+  maxObjects?: number;
+  canAddBall?: boolean;
+  canAddBox?: boolean;
+  canAddGLB?: boolean;
+  performanceWarnings?: string[];
   onError?: (error: SimulationError) => void;
 }
 
@@ -24,6 +29,11 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   onReset,
   isRunning,
   objectCount,
+  maxObjects = 50,
+  canAddBall = true,
+  canAddBox = true,
+  canAddGLB = true,
+  performanceWarnings = [],
   onError
 }) => {
   const { fps, frameTime, memoryUsage } = usePerformance();
@@ -33,27 +43,36 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       
       <div className="button-group">
         <button 
-          className="control-button add-ball"
+          className={`control-button add-ball ${!canAddBall ? 'disabled' : ''}`}
           onClick={onAddBall}
-          disabled={!isRunning}
-          title={isRunning ? "Add a physics ball to the scene" : "Resume simulation to add objects"}
+          disabled={!isRunning || !canAddBall}
+          title={
+            !isRunning ? "Resume simulation to add objects" :
+            !canAddBall ? "Ball limit reached" :
+            "Add a physics ball to the scene"
+          }
         >
-          Add Ball
+          Add Ball {!canAddBall && '(Limit)'}
         </button>
         
         <button 
-          className="control-button add-box"
+          className={`control-button add-box ${!canAddBox ? 'disabled' : ''}`}
           onClick={onAddBox}
-          disabled={!isRunning}
-          title={isRunning ? "Add a physics box to the scene" : "Resume simulation to add objects"}
+          disabled={!isRunning || !canAddBox}
+          title={
+            !isRunning ? "Resume simulation to add objects" :
+            !canAddBox ? "Box limit reached" :
+            "Add a physics box to the scene"
+          }
         >
-          Add Square
+          Add Square {!canAddBox && '(Limit)'}
         </button>
         
         <GLBLoader
           onLoadGLB={onLoadGLB}
           onError={onError}
-          disabled={!isRunning}
+          disabled={!isRunning || !canAddGLB}
+          limitReached={!canAddGLB}
         />
       </div>
 
@@ -80,7 +99,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           <div className="info-title">Simulation</div>
           <div className="info-item">
             <span className="info-label">Objects:</span>
-            <span className="info-value">{objectCount}</span>
+            <span className={`info-value ${objectCount >= maxObjects * 0.9 ? 'warning' : ''}`}>
+              {objectCount}/{maxObjects}
+            </span>
           </div>
           <div className="info-item">
             <span className="info-label">Status:</span>
@@ -109,6 +130,17 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             </div>
           )}
         </div>
+        
+        {performanceWarnings.length > 0 && (
+          <div className="info-section warnings-section">
+            <div className="info-title">⚠️ Warnings</div>
+            {performanceWarnings.slice(0, 3).map((warning, index) => (
+              <div key={index} className="warning-item">
+                {warning}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

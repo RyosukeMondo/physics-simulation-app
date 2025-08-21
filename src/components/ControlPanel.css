@@ -228,8 +228,9 @@
     padding: 8px 12px;
     font-size: 12px;
   }
-}/* GLB
- Loader Styles */
+}
+
+/* GLB Loader Styles */
 .glb-loader {
   display: flex;
   flex-direction: column;
@@ -334,4 +335,44 @@
 .collision-type-select option {
   background: #333;
   color: white;
+}
+
+/* Performance Warning Styles */
+.warnings-section {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.warnings-section .info-title {
+  color: #ff6b6b;
+  border-bottom-color: rgba(255, 107, 107, 0.3);
+}
+
+.warning-item {
+  font-size: 11px;
+  color: #fca5a5;
+  margin-bottom: 2px;
+  padding: 2px 0;
+}
+
+.info-value.warning {
+  color: #ff6b6b;
+}
+
+.control-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #6c757d, #5a6268) !important;
+}
+
+.control-button.disabled:hover {
+  background: linear-gradient(135deg, #6c757d, #5a6268) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.control-button.disabled::before {
+  display: none;
 }

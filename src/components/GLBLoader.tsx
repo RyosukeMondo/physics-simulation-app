@@ -6,6 +6,7 @@ interface GLBLoaderProps {
   onLoadGLB: (url: string, file: File, collisionType?: 'box' | 'convex') => void;
   onError?: (error: SimulationError) => void;
   disabled?: boolean;
+  limitReached?: boolean;
   className?: string;
 }
 
@@ -13,6 +14,7 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
   onLoadGLB,
   onError,
   disabled = false,
+  limitReached = false,
   className = ''
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -141,12 +143,17 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
         </select>
         
         <button
-          className={`control-button load-glb ${isLoading ? 'loading' : ''}`}
+          className={`control-button load-glb ${isLoading ? 'loading' : ''} ${limitReached ? 'disabled' : ''}`}
           onClick={handleFileSelect}
-          disabled={disabled || isLoading}
-          title={disabled ? "Resume simulation to load GLB models" : "Load a GLB or GLTF model file"}
+          disabled={disabled || isLoading || limitReached}
+          title={
+            disabled ? "Resume simulation to load GLB models" :
+            limitReached ? "GLB model limit reached" :
+            "Load a GLB or GLTF model file"
+          }
         >
-          {isLoading ? `Loading... ${loadingProgress}%` : 'Load GLB'}
+          {isLoading ? `Loading... ${loadingProgress}%` : 
+           limitReached ? 'Load GLB (Limit)' : 'Load GLB'}
         </button>
         
         {isLoading && (

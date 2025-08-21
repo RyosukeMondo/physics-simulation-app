@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
+import { BoxGeometry, MeshStandardMaterial } from 'three';
+import { PerformanceOptimizer, createMaterialKey, createGeometryKey } from '../utils/performanceOptimization';
 
 interface PhysicsBoxProps {
   position: [number, number, number];
@@ -14,6 +16,8 @@ const PhysicsBox: React.FC<PhysicsBoxProps> = ({
   mass = 1,
   color = 'blue'
 }) => {
+  const optimizer = PerformanceOptimizer.getInstance();
+
   const [ref] = useRigidBody(() => ({
     shapeType: ShapeType.BOX,
     bodyType: BodyType.DYNAMIC,
@@ -25,11 +29,23 @@ const PhysicsBox: React.FC<PhysicsBoxProps> = ({
     }
   }));
 
+  // Cache geometry and material for performance
+  const geometry = useMemo(() => {
+    const geometryKey = createGeometryKey('box', size);
+    return optimizer.getCachedGeometry(geometryKey, () => new BoxGeometry(...size));
+  }, [size, optimizer]);
+
+  const material = useMemo(() => {
+    const materialKey = createMaterialKey('standard', color, { metalness: 0.2, roughness: 0.7 });
+    return optimizer.getCachedMaterial(materialKey, () => new MeshStandardMaterial({ 
+      color,
+      metalness: 0.2,
+      roughness: 0.7
+    }));
+  }, [color, optimizer]);
+
   return (
-    <mesh ref={ref} castShadow receiveShadow>
-      <boxGeometry args={size} />
-      <meshStandardMaterial color={color} />
-    </mesh>
+    <mesh ref={ref} castShadow receiveShadow geometry={geometry} material={material} />
   );
 };
 

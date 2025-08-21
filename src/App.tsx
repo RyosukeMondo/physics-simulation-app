@@ -20,7 +20,13 @@ function App() {
     addGLBWithCollisionType,
     toggleSimulation,
     removeAllObjects,
-    objectCount
+    objectCount,
+    performanceWarnings,
+    clearPerformanceWarnings,
+    maxObjects,
+    canAddBall,
+    canAddBox,
+    canAddGLB
   } = useSimulation();
 
   // Error handling state
@@ -78,6 +84,11 @@ function App() {
           onReset={removeAllObjects}
           isRunning={isRunning}
           objectCount={objectCount}
+          maxObjects={maxObjects}
+          canAddBall={canAddBall}
+          canAddBox={canAddBox}
+          canAddGLB={canAddGLB}
+          performanceWarnings={performanceWarnings}
           onError={handleError}
         />
 

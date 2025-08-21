@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
+import { SphereGeometry, MeshStandardMaterial } from 'three';
+import { PerformanceOptimizer, createMaterialKey, createGeometryKey } from '../utils/performanceOptimization';
 
 interface PhysicsBallProps {
   position: [number, number, number];
@@ -14,6 +16,8 @@ const PhysicsBall: React.FC<PhysicsBallProps> = ({
   mass = 1,
   color = 'orange'
 }) => {
+  const optimizer = PerformanceOptimizer.getInstance();
+
   const [ref] = useRigidBody(() => ({
     shapeType: ShapeType.SPHERE,
     bodyType: BodyType.DYNAMIC,
@@ -25,11 +29,23 @@ const PhysicsBall: React.FC<PhysicsBallProps> = ({
     }
   }));
 
+  // Cache geometry and material for performance
+  const geometry = useMemo(() => {
+    const geometryKey = createGeometryKey('sphere', [radius, 32, 32]);
+    return optimizer.getCachedGeometry(geometryKey, () => new SphereGeometry(radius, 32, 32));
+  }, [radius, optimizer]);
+
+  const material = useMemo(() => {
+    const materialKey = createMaterialKey('standard', color, { metalness: 0.1, roughness: 0.8 });
+    return optimizer.getCachedMaterial(materialKey, () => new MeshStandardMaterial({ 
+      color,
+      metalness: 0.1,
+      roughness: 0.8
+    }));
+  }, [color, optimizer]);
+
   return (
-    <mesh ref={ref} castShadow receiveShadow>
-      <sphereGeometry args={[radius, 32, 32]} />
-      <meshStandardMaterial color={color} />
-    </mesh>
+    <mesh ref={ref} castShadow receiveShadow geometry={geometry} material={material} />
   );
 };
 
