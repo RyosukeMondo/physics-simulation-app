@@ -1,5 +1,6 @@
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
 import { useRef, useCallback, useEffect } from 'react';
+import * as THREE from 'three';
 import { debugLogger } from '../utils/debugLogger';
 import { addRecentRigidBodyConfig } from '../utils/physicsDebugRegistry';
 
@@ -19,7 +20,8 @@ interface RigidBodyConfig {
 
 export const useSafeRigidBody = (
   configFactory: () => RigidBodyConfig,
-  componentName: string = 'Unknown'
+  componentName: string = 'Unknown',
+  threeObject?: THREE.Object3D
 ) => {
   const errorRef = useRef<string | null>(null);
   const cacheRef = useRef<RigidBodyConfig | null>(null);
@@ -155,7 +157,7 @@ export const useSafeRigidBody = (
 
   // Always call useRigidBody - hooks must be called unconditionally
   debugLogger.info(`Calling useRigidBody for ${componentName}`);
-  const [rigidBodyRef] = useRigidBody(safeConfigFactory);
+  const [rigidBodyRef] = useRigidBody(safeConfigFactory, threeObject as any);
   debugLogger.info(`useRigidBody completed for ${componentName}`);
 
   // Lifecycle logs to correlate mount/unmount in diagnostics

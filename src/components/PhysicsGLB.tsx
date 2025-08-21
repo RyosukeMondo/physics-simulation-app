@@ -89,11 +89,14 @@ const GLBInstance: React.FC<{
         }
       };
     } else {
+      const bodyType = latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC;
+      const mass = latestProps.mass;
+
       nextConfig = {
         shapeType: latestCollision.shapeType,
-        bodyType: latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
+        bodyType,
         position: latestProps.position,
-        mass: latestProps.mass,
+        mass,
         material: {
           friction: 0.4,
           restitution: 0.3
@@ -107,7 +110,11 @@ const GLBInstance: React.FC<{
     return nextConfig;
   }, [componentId]);
 
-  const { ref, config, error: physicsError, hasError } = useSafeRigidBody(configFactory, componentId);
+  const { ref, config, error: physicsError, hasError } = useSafeRigidBody(
+    configFactory,
+    componentId,
+    sceneInstanceRef.current
+  );
 
   useEffect(() => {
     if (hasError) {
@@ -201,15 +208,14 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
         };
       }
 
-      if (shapeData.shapeType === 'convex' && shapeData.vertices) {
-        // Note: use-ammojs may not support CONVEX_HULL shape type yet
-        // For now, we'll use BOX collision as a fallback for convex shapes
-        // TODO: Update when convex hull support is available
-        console.warn('Convex hull collision requested but not supported, using box collision');
+      if (shapeData.shapeType === 'convex') {
+        // Use convex hull shape (dynamic-friendly and lighter than triangle mesh)
         return {
-          shapeType: ShapeType.BOX,
+          shapeType: ShapeType.HULL,
           shapeConfig: {
-            halfExtents: { x: 1, y: 1, z: 1 } // Default size for convex fallback
+            // Reasonable defaults for performance/quality balance
+            hullMaxVertices: 64,
+            includeInvisible: false
           }
         };
       } else if (shapeData.shapeType === 'box' && shapeData.dimensions) {
