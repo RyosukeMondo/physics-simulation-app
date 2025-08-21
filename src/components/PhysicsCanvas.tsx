@@ -6,9 +6,10 @@ import { Vector3 } from 'three';
 
 interface PhysicsCanvasProps {
   children?: React.ReactNode;
+  isRunning?: boolean;
 }
 
-const PhysicsCanvas: React.FC<PhysicsCanvasProps> = ({ children }) => {
+const PhysicsCanvas: React.FC<PhysicsCanvasProps> = ({ children, isRunning = true }) => {
   return (
     <Canvas
       shadows
@@ -20,7 +21,7 @@ const PhysicsCanvas: React.FC<PhysicsCanvasProps> = ({ children }) => {
       }}
       style={{ width: '100vw', height: '100vh' }}
     >
-      <Physics gravity={[0, -9.81, 0]}>
+      <Physics gravity={[0, -9.81, 0]} simulationSpeed={isRunning ? 1 : 0}>
         {/* Default lighting setup */}
         <ambientLight intensity={0.5} />
         <directionalLight

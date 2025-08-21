@@ -105,4 +105,43 @@ describe('useSimulation', () => {
 
     expect(result.current.isRunning).toBe(true);
   });
+
+  it('increments resetKey when removeAllObjects is called', () => {
+    const { result } = renderHook(() => useSimulation());
+
+    const initialResetKey = result.current.resetKey;
+
+    act(() => {
+      result.current.addBall();
+      result.current.removeAllObjects();
+    });
+
+    expect(result.current.resetKey).toBe(initialResetKey + 1);
+    expect(result.current.objects).toHaveLength(0);
+  });
+
+  it('temporarily pauses simulation during reset', async () => {
+    const { result } = renderHook(() => useSimulation());
+
+    act(() => {
+      result.current.addBall();
+    });
+
+    expect(result.current.isRunning).toBe(true);
+
+    act(() => {
+      result.current.removeAllObjects();
+    });
+
+    // Should be paused immediately after reset
+    expect(result.current.isRunning).toBe(false);
+    expect(result.current.objects).toHaveLength(0);
+
+    // Wait for the timeout to resume simulation
+    await act(async () => {
+      await new Promise(resolve => setTimeout(resolve, 150));
+    });
+
+    expect(result.current.isRunning).toBe(true);
+  });
 });

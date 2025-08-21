@@ -4,6 +4,7 @@ import { SpawnedObject, ObjectType } from '../types/simulation';
 export const useSimulation = () => {
   const [objects, setObjects] = useState<SpawnedObject[]>([]);
   const [isRunning, setIsRunning] = useState(true);
+  const [resetKey, setResetKey] = useState(0);
 
   const generateRandomPosition = (): [number, number, number] => {
     // Generate random position above the scene for objects to fall
@@ -49,7 +50,17 @@ export const useSimulation = () => {
   }, []);
 
   const removeAllObjects = useCallback(() => {
+    // Pause simulation briefly during reset to prevent physics update errors
+    setIsRunning(false);
     setObjects([]);
+    
+    // Force physics world to remount by changing key
+    setResetKey(prev => prev + 1);
+    
+    // Resume simulation after a brief delay to allow cleanup
+    setTimeout(() => {
+      setIsRunning(true);
+    }, 100);
   }, []);
 
   const addBall = useCallback(() => {
@@ -67,6 +78,7 @@ export const useSimulation = () => {
   return {
     objects,
     isRunning,
+    resetKey,
     addObject,
     removeObject,
     removeAllObjects,
