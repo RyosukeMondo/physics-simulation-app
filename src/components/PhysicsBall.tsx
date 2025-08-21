@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
-import { Vector3 } from 'three';
 
 interface PhysicsBallProps {
   position: [number, number, number];
