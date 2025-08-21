@@ -60,7 +60,7 @@ const GroundPlane: React.FC = () => {
   const [ref] = useRigidBody(() => ({
     shapeType: ShapeType.BOX,
     bodyType: BodyType.STATIC,
-    position: [0, -0.5, 0],
+    position: [0, -0.5, 0] as [number, number, number],
     shapeConfig: {
       halfExtents: new Vector3(10, 0.5, 10)
     }

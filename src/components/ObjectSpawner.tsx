@@ -4,6 +4,7 @@ import { SimulationError } from '../utils/errorHandling';
 import PhysicsBall from './PhysicsBall';
 import PhysicsBox from './PhysicsBox';
 import PhysicsGLB from './PhysicsGLB';
+import SafePhysicsWrapper from './SafePhysicsWrapper';
 
 interface ObjectSpawnerProps {
   objects: SpawnedObject[];
@@ -13,39 +14,42 @@ interface ObjectSpawnerProps {
 const ObjectSpawner: React.FC<ObjectSpawnerProps> = ({ objects, onError }) => {
   return (
     <>
-      {objects.map((obj) => {
+      {objects.filter(obj => obj && obj.position).map((obj) => {
         switch (obj.type) {
           case ObjectType.BALL:
             return (
-              <PhysicsBall
-                key={obj.id}
-                position={obj.position}
-                radius={obj.props?.radius}
-                mass={obj.props?.mass}
-                color={obj.props?.color}
-              />
+              <SafePhysicsWrapper key={obj.id} position={obj.position}>
+                <PhysicsBall
+                  position={obj.position}
+                  radius={obj.props?.radius}
+                  mass={obj.props?.mass}
+                  color={obj.props?.color}
+                />
+              </SafePhysicsWrapper>
             );
           case ObjectType.BOX:
             return (
-              <PhysicsBox
-                key={obj.id}
-                position={obj.position}
-                size={obj.props?.size}
-                mass={obj.props?.mass}
-                color={obj.props?.color}
-              />
+              <SafePhysicsWrapper key={obj.id} position={obj.position}>
+                <PhysicsBox
+                  position={obj.position}
+                  size={obj.props?.size}
+                  mass={obj.props?.mass}
+                  color={obj.props?.color}
+                />
+              </SafePhysicsWrapper>
             );
           case ObjectType.GLB_MODEL:
             return obj.props?.url ? (
-              <PhysicsGLB
-                key={obj.id}
-                url={obj.props.url}
-                position={obj.position}
-                scale={obj.props?.scale}
-                mass={obj.props?.mass}
-                collisionType={obj.props?.collisionType}
-                onError={onError}
-              />
+              <SafePhysicsWrapper key={obj.id} position={obj.position}>
+                <PhysicsGLB
+                  url={obj.props.url}
+                  position={obj.position}
+                  scale={obj.props?.scale}
+                  mass={obj.props?.mass}
+                  collisionType={obj.props?.collisionType}
+                  onError={onError}
+                />
+              </SafePhysicsWrapper>
             ) : null;
           default:
             return null;

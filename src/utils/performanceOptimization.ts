@@ -107,13 +107,17 @@ export class PerformanceOptimizer {
       return false;
     }
 
-    const typeCount = objects.filter(obj => obj.type === type).length;
-    switch (type) {
+    // Normalize type to handle both enum values and string values
+    const normalizedType = type.toLowerCase();
+    const typeCount = objects.filter(obj => obj.type.toLowerCase() === normalizedType).length;
+    
+    switch (normalizedType) {
       case 'ball':
         return typeCount < PERFORMANCE_LIMITS.MAX_BALLS;
       case 'box':
         return typeCount < PERFORMANCE_LIMITS.MAX_BOXES;
       case 'glb':
+      case 'glb_model':
         return typeCount < PERFORMANCE_LIMITS.MAX_GLB_MODELS;
       default:
         return false;

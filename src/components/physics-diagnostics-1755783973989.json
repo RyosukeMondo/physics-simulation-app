@@ -1,0 +1,3257 @@
+{
+  "exportedAt": "2025-08-21T13:46:13.989Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+  "recentRigidBodyConfigs": [
+    {
+      "timestamp": 1755783959373,
+      "componentName": "PhysicsBall-1755783959364-5ulprpkk3",
+      "config": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+      }
+    },
+    {
+      "timestamp": 1755783964922,
+      "componentName": "GLBModel-1755783964705-ob9pttp1p",
+      "config": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783964922"
+      }
+    },
+    {
+      "timestamp": 1755783967219,
+      "componentName": "GLBModel-1755783964705-ob9pttp1p",
+      "config": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783967218"
+      }
+    },
+    {
+      "timestamp": 1755783970971,
+      "componentName": "GLBModel-1755783964705-ob9pttp1p",
+      "config": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783970970"
+      }
+    },
+    {
+      "timestamp": 1755783970976,
+      "componentName": "PhysicsBall-1755783970965-zqiy3bnpt",
+      "config": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+      }
+    },
+    {
+      "timestamp": 1755783971579,
+      "componentName": "GLBModel-1755783964705-ob9pttp1p",
+      "config": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783971579"
+      }
+    },
+    {
+      "timestamp": 1755783971583,
+      "componentName": "PhysicsBall-1755783971574-eu3u1b9xf",
+      "config": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783971574-eu3u1b9xf-1755783971583"
+      }
+    },
+    {
+      "timestamp": 1755783972211,
+      "componentName": "GLBModel-1755783964705-ob9pttp1p",
+      "config": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783972211"
+      }
+    }
+  ],
+  "debugLogs": [
+    {
+      "timestamp": 1755783959342,
+      "level": "info",
+      "message": "Adding object",
+      "data": {
+        "type": "ball",
+        "currentObjectCount": 0
+      }
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Generated random position",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Validating position for generateRandomPosition",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Position validation passed for generateRandomPosition",
+      "data": [
+        -3.3353344168059555,
+        6.327126580232637,
+        3.7713771940375462
+      ]
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Creating new object",
+      "data": {
+        "objectId": "ball-1755783959343-is4l73g7a",
+        "type": "ball",
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Validating newObject-ball-1755783959343-is4l73g7a",
+      "data": {
+        "obj": {
+          "id": "ball-1755783959343-is4l73g7a",
+          "type": "ball",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "timestamp": 1755783959343,
+          "props": {
+            "mass": 1
+          }
+        },
+        "requiredProps": [
+          "id",
+          "type",
+          "position",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "newObject-ball-1755783959343-is4l73g7a validation passed"
+    },
+    {
+      "timestamp": 1755783959343,
+      "level": "info",
+      "message": "Validating position for finalValidation-ball-1755783959343-is4l73g7a",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959344,
+      "level": "info",
+      "message": "Position validation passed for finalValidation-ball-1755783959343-is4l73g7a",
+      "data": [
+        -3.3353344168059555,
+        6.327126580232637,
+        3.7713771940375462
+      ]
+    },
+    {
+      "timestamp": 1755783959344,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783959343-is4l73g7a",
+        "totalObjects": 1,
+        "newObject": {
+          "id": "ball-1755783959343-is4l73g7a",
+          "type": "ball",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "timestamp": 1755783959343,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783959344,
+      "level": "info",
+      "message": "Object creation completed successfully",
+      "data": {
+        "objectId": "ball-1755783959343-is4l73g7a"
+      }
+    },
+    {
+      "timestamp": 1755783959344,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783959343-is4l73g7a",
+        "totalObjects": 1,
+        "newObject": {
+          "id": "ball-1755783959343-is4l73g7a",
+          "type": "ball",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "timestamp": 1755783959343,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783959364,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959364,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": [
+        -3.3353344168059555,
+        6.327126580232637,
+        3.7713771940375462
+      ]
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": [
+        -3.3353344168059555,
+        6.327126580232637,
+        3.7713771940375462
+      ]
+    },
+    {
+      "timestamp": 1755783959365,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959366,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959366,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959366,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783959368,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959368,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783959368,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959368,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959369,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959369,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959369,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959369,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959369,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959370,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783959370,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959372,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783959364-5ulprpkk3 mounted",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959372,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783959372,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783959372,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783959373,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": [
+        -3.3353344168059555,
+        6.327126580232637,
+        3.7713771940375462
+      ]
+    },
+    {
+      "timestamp": 1755783959373,
+      "level": "info",
+      "message": "Rigid body config validated successfully for PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+      }
+    },
+    {
+      "timestamp": 1755783959374,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783959364-5ulprpkk3 unmounting"
+    },
+    {
+      "timestamp": 1755783959374,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783959364-5ulprpkk3 mounted",
+      "data": {
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783962215,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964589,
+      "level": "info",
+      "message": "Loading GLB file",
+      "data": {
+        "fileName": "suit_case.glb",
+        "size": 9001072,
+        "collisionType": "box"
+      }
+    },
+    {
+      "timestamp": 1755783964590,
+      "level": "info",
+      "message": "Adding object",
+      "data": {
+        "type": "glb",
+        "customProps": {
+          "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "collisionType": "box",
+          "mass": 1
+        },
+        "currentObjectCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783964590,
+      "level": "info",
+      "message": "Generated random position",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964590,
+      "level": "info",
+      "message": "Validating position for generateRandomPosition",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964590,
+      "level": "info",
+      "message": "Position validation passed for generateRandomPosition",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Creating new object",
+      "data": {
+        "objectId": "glb-1755783964590-e4qjw8p7u",
+        "type": "glb",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Validating newObject-glb-1755783964590-e4qjw8p7u",
+      "data": {
+        "obj": {
+          "id": "glb-1755783964590-e4qjw8p7u",
+          "type": "glb",
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "timestamp": 1755783964591,
+          "props": {
+            "mass": 1,
+            "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "collisionType": "box"
+          }
+        },
+        "requiredProps": [
+          "id",
+          "type",
+          "position",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "newObject-glb-1755783964590-e4qjw8p7u validation passed"
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Validating position for finalValidation-glb-1755783964590-e4qjw8p7u",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Position validation passed for finalValidation-glb-1755783964590-e4qjw8p7u",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "glb-1755783964590-e4qjw8p7u",
+        "totalObjects": 2,
+        "newObject": {
+          "id": "glb-1755783964590-e4qjw8p7u",
+          "type": "glb",
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "timestamp": 1755783964591,
+          "props": {
+            "mass": 1,
+            "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "collisionType": "box"
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783964591,
+      "level": "info",
+      "message": "Object creation completed successfully",
+      "data": {
+        "objectId": "glb-1755783964590-e4qjw8p7u"
+      }
+    },
+    {
+      "timestamp": 1755783964592,
+      "level": "info",
+      "message": "GLB loading initiated successfully"
+    },
+    {
+      "timestamp": 1755783964593,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "glb-1755783964590-e4qjw8p7u",
+        "totalObjects": 2,
+        "newObject": {
+          "id": "glb-1755783964590-e4qjw8p7u",
+          "type": "glb",
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "timestamp": 1755783964591,
+          "props": {
+            "mass": 1,
+            "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "collisionType": "box"
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783964611,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783964611,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783964612,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964612,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783964612,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783964612,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964705,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964706,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964706,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964706,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964706,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783964707,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783964707,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783964707,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783964920,
+      "level": "info",
+      "message": "Creating rigid body config for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783964921,
+      "level": "info",
+      "message": "Creating physics config for GLB GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "collisionData": {
+          "shapeType": "box",
+          "shapeConfig": {
+            "halfExtents": {
+              "x": 0.3156610429286957,
+              "y": 0.5268018543720245,
+              "z": 0.192679263651371
+            }
+          }
+        },
+        "validatedProps": {
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "mass": 1,
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "hasScene": true
+      }
+    },
+    {
+      "timestamp": 1755783964921,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964921,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964922,
+      "level": "info",
+      "message": "Rigid body config validated successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783964922"
+      }
+    },
+    {
+      "timestamp": 1755783964926,
+      "level": "info",
+      "message": "GLBModel GLBModel-1755783964705-ob9pttp1p mounted",
+      "data": {
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "mass": 1,
+        "collisionType": "box"
+      }
+    },
+    {
+      "timestamp": 1755783964926,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964926,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964927,
+      "level": "info",
+      "message": "GLB scene loaded successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7"
+      }
+    },
+    {
+      "timestamp": 1755783964927,
+      "level": "info",
+      "message": "GLBModel GLBModel-1755783964705-ob9pttp1p unmounting"
+    },
+    {
+      "timestamp": 1755783964931,
+      "level": "info",
+      "message": "GLBModel GLBModel-1755783964705-ob9pttp1p mounted",
+      "data": {
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "mass": 1,
+        "collisionType": "box"
+      }
+    },
+    {
+      "timestamp": 1755783964931,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783964931,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783964932,
+      "level": "info",
+      "message": "GLB scene loaded successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7"
+      }
+    },
+    {
+      "timestamp": 1755783967212,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783967212,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783967212,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783967212,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783967212,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783967213,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783967214,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783967214,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783967215,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783967215,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783967217,
+      "level": "info",
+      "message": "Creating rigid body config for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783967218,
+      "level": "info",
+      "message": "Creating physics config for GLB GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "collisionData": {
+          "shapeType": "box",
+          "shapeConfig": {
+            "halfExtents": {
+              "x": 0.3156610429286957,
+              "y": 0.5268018543720245,
+              "z": 0.192679263651371
+            }
+          }
+        },
+        "validatedProps": {
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "mass": 1,
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "hasScene": true
+      }
+    },
+    {
+      "timestamp": 1755783967218,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783967218,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783967218,
+      "level": "info",
+      "message": "Rigid body config validated successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783967218"
+      }
+    },
+    {
+      "timestamp": 1755783970944,
+      "level": "info",
+      "message": "Adding object",
+      "data": {
+        "type": "ball",
+        "currentObjectCount": 2
+      }
+    },
+    {
+      "timestamp": 1755783970944,
+      "level": "info",
+      "message": "Generated random position",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970944,
+      "level": "info",
+      "message": "Validating position for generateRandomPosition",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970944,
+      "level": "info",
+      "message": "Position validation passed for generateRandomPosition",
+      "data": [
+        -0.056045330021331274,
+        7.229328101894515,
+        3.6735365000417026
+      ]
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Creating new object",
+      "data": {
+        "objectId": "ball-1755783970944-xltit9mc5",
+        "type": "ball",
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Validating newObject-ball-1755783970944-xltit9mc5",
+      "data": {
+        "obj": {
+          "id": "ball-1755783970944-xltit9mc5",
+          "type": "ball",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "timestamp": 1755783970945,
+          "props": {
+            "mass": 1
+          }
+        },
+        "requiredProps": [
+          "id",
+          "type",
+          "position",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "newObject-ball-1755783970944-xltit9mc5 validation passed"
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Validating position for finalValidation-ball-1755783970944-xltit9mc5",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Position validation passed for finalValidation-ball-1755783970944-xltit9mc5",
+      "data": [
+        -0.056045330021331274,
+        7.229328101894515,
+        3.6735365000417026
+      ]
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783970944-xltit9mc5",
+        "totalObjects": 3,
+        "newObject": {
+          "id": "ball-1755783970944-xltit9mc5",
+          "type": "ball",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "timestamp": 1755783970945,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783970945,
+      "level": "info",
+      "message": "Object creation completed successfully",
+      "data": {
+        "objectId": "ball-1755783970944-xltit9mc5"
+      }
+    },
+    {
+      "timestamp": 1755783970946,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783970944-xltit9mc5",
+        "totalObjects": 3,
+        "newObject": {
+          "id": "ball-1755783970944-xltit9mc5",
+          "type": "ball",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "timestamp": 1755783970945,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783970963,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970965,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783970965,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783970965,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783970965,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783970965,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": [
+        -0.056045330021331274,
+        7.229328101894515,
+        3.6735365000417026
+      ]
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": [
+        -0.056045330021331274,
+        7.229328101894515,
+        3.6735365000417026
+      ]
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970966,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970967,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970968,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783970968,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970969,
+      "level": "info",
+      "message": "Creating rigid body config for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783970970,
+      "level": "info",
+      "message": "Creating physics config for GLB GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "collisionData": {
+          "shapeType": "box",
+          "shapeConfig": {
+            "halfExtents": {
+              "x": 0.3156610429286957,
+              "y": 0.5268018543720245,
+              "z": 0.192679263651371
+            }
+          }
+        },
+        "validatedProps": {
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "mass": 1,
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "hasScene": true
+      }
+    },
+    {
+      "timestamp": 1755783970970,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970970,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783970971,
+      "level": "info",
+      "message": "Rigid body config validated successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783970970"
+      }
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783970965-zqiy3bnpt mounted",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": [
+        -0.056045330021331274,
+        7.229328101894515,
+        3.6735365000417026
+      ]
+    },
+    {
+      "timestamp": 1755783970975,
+      "level": "info",
+      "message": "Rigid body config validated successfully for PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+      }
+    },
+    {
+      "timestamp": 1755783970980,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783970965-zqiy3bnpt unmounting"
+    },
+    {
+      "timestamp": 1755783970981,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783970965-zqiy3bnpt mounted",
+      "data": {
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971558,
+      "level": "info",
+      "message": "Adding object",
+      "data": {
+        "type": "ball",
+        "currentObjectCount": 3
+      }
+    },
+    {
+      "timestamp": 1755783971558,
+      "level": "info",
+      "message": "Generated random position",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971558,
+      "level": "info",
+      "message": "Validating position for generateRandomPosition",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "Position validation passed for generateRandomPosition",
+      "data": [
+        2.3475322079071663,
+        7.4228987500088675,
+        -2.686662495701812
+      ]
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "Creating new object",
+      "data": {
+        "objectId": "ball-1755783971558-yvg9mfa90",
+        "type": "ball",
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "Validating newObject-ball-1755783971558-yvg9mfa90",
+      "data": {
+        "obj": {
+          "id": "ball-1755783971558-yvg9mfa90",
+          "type": "ball",
+          "position": [
+            2.3475322079071663,
+            7.4228987500088675,
+            -2.686662495701812
+          ],
+          "timestamp": 1755783971559,
+          "props": {
+            "mass": 1
+          }
+        },
+        "requiredProps": [
+          "id",
+          "type",
+          "position",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "newObject-ball-1755783971558-yvg9mfa90 validation passed"
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "Validating position for finalValidation-ball-1755783971558-yvg9mfa90",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971559,
+      "level": "info",
+      "message": "Position validation passed for finalValidation-ball-1755783971558-yvg9mfa90",
+      "data": [
+        2.3475322079071663,
+        7.4228987500088675,
+        -2.686662495701812
+      ]
+    },
+    {
+      "timestamp": 1755783971560,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783971558-yvg9mfa90",
+        "totalObjects": 4,
+        "newObject": {
+          "id": "ball-1755783971558-yvg9mfa90",
+          "type": "ball",
+          "position": [
+            2.3475322079071663,
+            7.4228987500088675,
+            -2.686662495701812
+          ],
+          "timestamp": 1755783971559,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783971560,
+      "level": "info",
+      "message": "Object creation completed successfully",
+      "data": {
+        "objectId": "ball-1755783971558-yvg9mfa90"
+      }
+    },
+    {
+      "timestamp": 1755783971560,
+      "level": "info",
+      "message": "Object added to state",
+      "data": {
+        "objectId": "ball-1755783971558-yvg9mfa90",
+        "totalObjects": 4,
+        "newObject": {
+          "id": "ball-1755783971558-yvg9mfa90",
+          "type": "ball",
+          "position": [
+            2.3475322079071663,
+            7.4228987500088675,
+            -2.686662495701812
+          ],
+          "timestamp": 1755783971559,
+          "props": {
+            "radius": 0.5,
+            "color": "orange",
+            "mass": 1
+          }
+        }
+      }
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783971572,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971573,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783971573,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783971573,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783971573,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+        },
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+        },
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971574,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": [
+        2.3475322079071663,
+        7.4228987500088675,
+        -2.686662495701812
+      ]
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Validating props for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": [
+        2.3475322079071663,
+        7.4228987500088675,
+        -2.686662495701812
+      ]
+    },
+    {
+      "timestamp": 1755783971575,
+      "level": "info",
+      "message": "Props validated for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Creating geometry for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "radius": 0.5
+      }
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Geometry created successfully for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971576,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Creating material for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Material created successfully for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "hasError": false,
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783971577,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "hasError": false,
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971578,
+      "level": "info",
+      "message": "Creating rigid body config for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783971578,
+      "level": "info",
+      "message": "Creating physics config for GLB GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "collisionData": {
+          "shapeType": "box",
+          "shapeConfig": {
+            "halfExtents": {
+              "x": 0.3156610429286957,
+              "y": 0.5268018543720245,
+              "z": 0.192679263651371
+            }
+          }
+        },
+        "validatedProps": {
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "mass": 1,
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "hasScene": true
+      }
+    },
+    {
+      "timestamp": 1755783971578,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971579,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783971579,
+      "level": "info",
+      "message": "Rigid body config validated successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783971579"
+      }
+    },
+    {
+      "timestamp": 1755783971582,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783971574-eu3u1b9xf mounted",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971583,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783971583,
+      "level": "info",
+      "message": "Creating rigid body config for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783971583,
+      "level": "info",
+      "message": "Validating position for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783971583,
+      "level": "info",
+      "message": "Position validation passed for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": [
+        2.3475322079071663,
+        7.4228987500088675,
+        -2.686662495701812
+      ]
+    },
+    {
+      "timestamp": 1755783971583,
+      "level": "info",
+      "message": "Rigid body config validated successfully for PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "shapeType": "sphere",
+        "bodyType": "dynamic",
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.6
+        },
+        "shapeConfig": {
+          "radius": 0.5
+        },
+        "debugId": "PhysicsBall-1755783971574-eu3u1b9xf-1755783971583"
+      }
+    },
+    {
+      "timestamp": 1755783971588,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783971574-eu3u1b9xf unmounting"
+    },
+    {
+      "timestamp": 1755783971588,
+      "level": "info",
+      "message": "PhysicsBall PhysicsBall-1755783971574-eu3u1b9xf mounted",
+      "data": {
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ],
+        "radius": 0.5,
+        "mass": 1,
+        "color": "orange"
+      }
+    },
+    {
+      "timestamp": 1755783972206,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783972207,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783972207,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972207,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783972207,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783959364-5ulprpkk3"
+    },
+    {
+      "timestamp": 1755783972207,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783959364-5ulprpkk3",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -3.3353344168059555,
+            6.327126580232637,
+            3.7713771940375462
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783959364-5ulprpkk3-1755783959373"
+        },
+        "hasError": false,
+        "position": [
+          -3.3353344168059555,
+          6.327126580232637,
+          3.7713771940375462
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "Calling useRigidBody for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "useRigidBody completed for GLBModel-1755783964705-ob9pttp1p"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+        },
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783972208,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783970965-zqiy3bnpt"
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783970965-zqiy3bnpt",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            -0.056045330021331274,
+            7.229328101894515,
+            3.6735365000417026
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783970965-zqiy3bnpt-1755783970975"
+        },
+        "hasError": false,
+        "position": [
+          -0.056045330021331274,
+          7.229328101894515,
+          3.6735365000417026
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            2.3475322079071663,
+            7.4228987500088675,
+            -2.686662495701812
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783971574-eu3u1b9xf-1755783971583"
+        },
+        "hasError": false,
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "Calling useRigidBody for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "useRigidBody completed for PhysicsBall-1755783971574-eu3u1b9xf"
+    },
+    {
+      "timestamp": 1755783972209,
+      "level": "info",
+      "message": "Rendering physics ball PhysicsBall-1755783971574-eu3u1b9xf",
+      "data": {
+        "config": {
+          "shapeType": "sphere",
+          "bodyType": "dynamic",
+          "position": [
+            2.3475322079071663,
+            7.4228987500088675,
+            -2.686662495701812
+          ],
+          "mass": 1,
+          "material": {
+            "friction": 0.4,
+            "restitution": 0.6
+          },
+          "shapeConfig": {
+            "radius": 0.5
+          },
+          "debugId": "PhysicsBall-1755783971574-eu3u1b9xf-1755783971583"
+        },
+        "hasError": false,
+        "position": [
+          2.3475322079071663,
+          7.4228987500088675,
+          -2.686662495701812
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972210,
+      "level": "info",
+      "message": "Creating rigid body config for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "callCount": 1
+      }
+    },
+    {
+      "timestamp": 1755783972210,
+      "level": "info",
+      "message": "Creating physics config for GLB GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "collisionData": {
+          "shapeType": "box",
+          "shapeConfig": {
+            "halfExtents": {
+              "x": 0.3156610429286957,
+              "y": 0.5268018543720245,
+              "z": 0.192679263651371
+            }
+          }
+        },
+        "validatedProps": {
+          "position": [
+            1.3163237185225398,
+            6.095849601387079,
+            -1.3686545949912379
+          ],
+          "mass": 1,
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "url": "blob:http://localhost:3000/3821742c-dbe8-4b2e-8943-fec64d41d1c7",
+        "hasScene": true
+      }
+    },
+    {
+      "timestamp": 1755783972210,
+      "level": "info",
+      "message": "Validating position for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ]
+      }
+    },
+    {
+      "timestamp": 1755783972211,
+      "level": "info",
+      "message": "Position validation passed for GLBModel-1755783964705-ob9pttp1p",
+      "data": [
+        1.3163237185225398,
+        6.095849601387079,
+        -1.3686545949912379
+      ]
+    },
+    {
+      "timestamp": 1755783972211,
+      "level": "info",
+      "message": "Rigid body config validated successfully for GLBModel-1755783964705-ob9pttp1p",
+      "data": {
+        "shapeType": "box",
+        "bodyType": "dynamic",
+        "position": [
+          1.3163237185225398,
+          6.095849601387079,
+          -1.3686545949912379
+        ],
+        "mass": 1,
+        "material": {
+          "friction": 0.4,
+          "restitution": 0.3
+        },
+        "shapeConfig": {
+          "halfExtents": {
+            "x": 0.3156610429286957,
+            "y": 0.5268018543720245,
+            "z": 0.192679263651371
+          }
+        },
+        "debugId": "GLBModel-1755783964705-ob9pttp1p-1755783972211"
+      }
+    }
+  ]
+}

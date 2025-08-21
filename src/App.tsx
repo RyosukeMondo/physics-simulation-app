@@ -5,8 +5,10 @@ import ObjectSpawner from './components/ObjectSpawner';
 import ErrorBoundary from './components/ErrorBoundary';
 import ErrorNotification from './components/ErrorNotification';
 import LoadingIndicator from './components/LoadingIndicator';
+import DebugPanel from './components/DebugPanel';
 import { useSimulation } from './hooks/useSimulation';
 import { SimulationError, ErrorType } from './utils/errorHandling';
+import { debugLogger } from './utils/debugLogger';
 import './App.css';
 
 function App() {
@@ -22,7 +24,6 @@ function App() {
     removeAllObjects,
     objectCount,
     performanceWarnings,
-    clearPerformanceWarnings,
     maxObjects,
     canAddBall,
     canAddBox,
@@ -31,16 +32,21 @@ function App() {
 
   // Error handling state
   const [currentError, setCurrentError] = useState<SimulationError | null>(null);
-  const [isInitializing, setIsInitializing] = useState(false);
+  const [isInitializing] = useState(false);
+  const [debugPanelVisible, setDebugPanelVisible] = useState(false);
 
   const handleLoadGLB = (url: string, file: File, collisionType?: 'box' | 'convex') => {
+    debugLogger.info('Loading GLB file', { fileName: file.name, size: file.size, collisionType });
+    
     try {
       if (collisionType) {
         addGLBWithCollisionType(url, file, collisionType);
       } else {
         addGLB(url, file);
       }
+      debugLogger.info('GLB loading initiated successfully');
     } catch (err) {
+      debugLogger.error('GLB loading failed', err);
       const error = err instanceof SimulationError 
         ? err 
         : new SimulationError(ErrorType.GLB_LOADING_FAILED, err instanceof Error ? err : new Error('Unknown error'));
@@ -104,6 +110,12 @@ function App() {
           error={currentError}
           onDismiss={handleDismissError}
           autoHide={false}
+        />
+
+        {/* Debug panel */}
+        <DebugPanel
+          isVisible={debugPanelVisible}
+          onToggle={() => setDebugPanelVisible(!debugPanelVisible)}
         />
       </div>
     </ErrorBoundary>
