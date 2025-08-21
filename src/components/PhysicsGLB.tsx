@@ -3,6 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
 import * as THREE from 'three';
 import { createCollisionShapeFromGLB, validateCollisionShape } from '../utils/glbPhysics';
+import { SimulationError, ErrorType, logError } from '../utils/errorHandling';
 
 interface PhysicsGLBProps {
   url: string;
@@ -11,7 +12,7 @@ interface PhysicsGLBProps {
   mass?: number;
   collisionType?: 'box' | 'convex';
   onLoad?: () => void;
-  onError?: (error: Error) => void;
+  onError?: (error: SimulationError) => void;
 }
 
 
@@ -27,8 +28,21 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
   onError
 }) => {
 
-  // Load GLB model using useGLTF hook
-  const { scene } = useGLTF(url);
+  // Load GLB model using useGLTF hook with error handling
+  let scene: THREE.Group | null = null;
+  try {
+    const gltf = useGLTF(url);
+    scene = gltf.scene;
+  } catch (err) {
+    const error = new SimulationError(
+      ErrorType.GLB_LOADING_FAILED,
+      err instanceof Error ? err : new Error('Failed to load GLB'),
+      { url, collisionType }
+    );
+    logError(error);
+    onError?.(error);
+    scene = null;
+  }
 
   // Calculate collision shape data based on collision type
   const collisionData = useMemo(() => {
@@ -38,6 +52,12 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
       const shapeData = createCollisionShapeFromGLB(scene, collisionType, scale);
       
       if (!shapeData || !validateCollisionShape(shapeData)) {
+        const error = new SimulationError(
+          ErrorType.GLB_PARSING_FAILED,
+          new Error('Invalid collision shape data'),
+          { url, collisionType, scale }
+        );
+        logError(error);
         console.warn('Invalid collision shape data, using fallback box');
         return {
           shapeType: ShapeType.BOX,
@@ -79,7 +99,14 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
         }
       };
     } catch (err) {
-      console.error('Error calculating collision shape:', err);
+      const error = new SimulationError(
+        ErrorType.GLB_PARSING_FAILED,
+        err instanceof Error ? err : new Error('Failed to calculate collision shape'),
+        { url, collisionType, scale }
+      );
+      logError(error);
+      onError?.(error);
+      
       // Fallback to simple box
       return {
         shapeType: ShapeType.BOX,
@@ -88,7 +115,7 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
         }
       };
     }
-  }, [scene, collisionType, scale]);
+  }, [scene, collisionType, scale, url, onError]);
 
   // Notify when model is loaded
   useEffect(() => {
@@ -96,11 +123,16 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
       try {
         onLoad?.();
       } catch (err) {
-        const error = err instanceof Error ? err : new Error('Failed to process GLB model');
+        const error = new SimulationError(
+          ErrorType.GLB_LOADING_FAILED,
+          err instanceof Error ? err : new Error('Failed to process GLB model'),
+          { url, collisionType }
+        );
+        logError(error);
         onError?.(error);
       }
     }
-  }, [scene, collisionData, onLoad, onError]);
+  }, [scene, collisionData, onLoad, onError, url, collisionType]);
 
   // Create physics body using calculated collision shape
   const [ref] = useRigidBody(() => {
@@ -154,30 +186,37 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
   );
 };
 
-// Error boundary component
+// Error boundary component for GLB loading
 class GLBErrorBoundary extends React.Component<
-  { children: React.ReactNode; onError?: (error: Error) => void },
-  { hasError: boolean }
+  { children: React.ReactNode; onError?: (error: SimulationError) => void; position: [number, number, number] },
+  { hasError: boolean; error: Error | null }
 > {
-  constructor(props: { children: React.ReactNode; onError?: (error: Error) => void }) {
+  constructor(props: { children: React.ReactNode; onError?: (error: SimulationError) => void; position: [number, number, number] }) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, error: null };
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error) {
-    this.props.onError?.(error);
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    const simulationError = new SimulationError(
+      ErrorType.GLB_LOADING_FAILED,
+      error,
+      { errorInfo }
+    );
+    logError(simulationError);
+    this.props.onError?.(simulationError);
   }
 
   render() {
     if (this.state.hasError) {
+      // Render a red error box at the intended position
       return (
-        <mesh>
+        <mesh position={this.props.position}>
           <boxGeometry args={[0.5, 0.5, 0.5]} />
-          <meshStandardMaterial color="red" />
+          <meshStandardMaterial color="red" transparent opacity={0.7} />
         </mesh>
       );
     }
@@ -189,7 +228,7 @@ class GLBErrorBoundary extends React.Component<
 // Main component with Suspense and error handling
 const PhysicsGLB: React.FC<PhysicsGLBProps> = (props) => {
   return (
-    <GLBErrorBoundary onError={props.onError}>
+    <GLBErrorBoundary onError={props.onError} position={props.position}>
       <Suspense
         fallback={
           <mesh position={props.position}>

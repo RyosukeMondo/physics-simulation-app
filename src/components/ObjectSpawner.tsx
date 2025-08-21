@@ -1,14 +1,16 @@
 import React from 'react';
 import { SpawnedObject, ObjectType } from '../types/simulation';
+import { SimulationError } from '../utils/errorHandling';
 import PhysicsBall from './PhysicsBall';
 import PhysicsBox from './PhysicsBox';
 import PhysicsGLB from './PhysicsGLB';
 
 interface ObjectSpawnerProps {
   objects: SpawnedObject[];
+  onError?: (error: SimulationError) => void;
 }
 
-const ObjectSpawner: React.FC<ObjectSpawnerProps> = ({ objects }) => {
+const ObjectSpawner: React.FC<ObjectSpawnerProps> = ({ objects, onError }) => {
   return (
     <>
       {objects.map((obj) => {
@@ -42,6 +44,7 @@ const ObjectSpawner: React.FC<ObjectSpawnerProps> = ({ objects }) => {
                 scale={obj.props?.scale}
                 mass={obj.props?.mass}
                 collisionType={obj.props?.collisionType}
+                onError={onError}
               />
             ) : null;
           default:

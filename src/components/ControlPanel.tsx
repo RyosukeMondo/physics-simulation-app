@@ -3,6 +3,8 @@ import GLBLoader from './GLBLoader';
 import { usePerformance } from '../hooks/usePerformance';
 import './ControlPanel.css';
 
+import { SimulationError } from '../utils/errorHandling';
+
 interface ControlPanelProps {
   onAddBall: () => void;
   onAddBox: () => void;
@@ -11,6 +13,7 @@ interface ControlPanelProps {
   onReset: () => void;
   isRunning: boolean;
   objectCount: number;
+  onError?: (error: SimulationError) => void;
 }
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -20,7 +23,8 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   onToggleSimulation,
   onReset,
   isRunning,
-  objectCount
+  objectCount,
+  onError
 }) => {
   const { fps, frameTime, memoryUsage } = usePerformance();
   return (
@@ -48,6 +52,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         
         <GLBLoader
           onLoadGLB={onLoadGLB}
+          onError={onError}
           disabled={!isRunning}
         />
       </div>
