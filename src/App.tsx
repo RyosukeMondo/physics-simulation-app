@@ -13,13 +13,18 @@ function App() {
     addBall,
     addBox,
     addGLB,
+    addGLBWithCollisionType,
     toggleSimulation,
     removeAllObjects,
     objectCount
   } = useSimulation();
 
-  const handleLoadGLB = (url: string, file: File) => {
-    addGLB(url, file);
+  const handleLoadGLB = (url: string, file: File, collisionType?: 'box' | 'convex') => {
+    if (collisionType) {
+      addGLBWithCollisionType(url, file, collisionType);
+    } else {
+      addGLB(url, file);
+    }
   };
 
   return (

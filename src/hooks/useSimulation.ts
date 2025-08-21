@@ -81,6 +81,16 @@ export const useSimulation = () => {
     });
   }, [addObject]);
 
+  const addGLBWithCollisionType = useCallback((url: string, file: File, collisionType: 'box' | 'convex', customProps?: Partial<SpawnedObject['props']>) => {
+    return addObject(ObjectType.GLB_MODEL, {
+      url,
+      scale: [1, 1, 1] as [number, number, number],
+      collisionType,
+      mass: 1,
+      ...customProps
+    });
+  }, [addObject]);
+
   const toggleSimulation = useCallback(() => {
     setIsRunning(prev => !prev);
   }, []);
@@ -95,6 +105,7 @@ export const useSimulation = () => {
     addBall,
     addBox,
     addGLB,
+    addGLBWithCollisionType,
     toggleSimulation,
     objectCount: objects.length
   };

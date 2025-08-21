@@ -58,7 +58,7 @@ describe('GLBLoader', () => {
     fireEvent.change(fileInput);
 
     await waitFor(() => {
-      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file);
+      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file, 'box');
     });
   });
 
@@ -132,7 +132,7 @@ describe('GLBLoader', () => {
     fireEvent.change(fileInput);
 
     await waitFor(() => {
-      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file);
+      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file, 'box');
     });
   });
 
@@ -154,7 +154,33 @@ describe('GLBLoader', () => {
     fireEvent.change(fileInput);
 
     await waitFor(() => {
-      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file);
+      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file, 'box');
+    });
+  });
+
+  it('uses selected collision type', async () => {
+    render(<GLBLoader onLoadGLB={mockOnLoadGLB} />);
+    
+    // Change collision type to convex
+    const select = screen.getByDisplayValue('Box Collision');
+    fireEvent.change(select, { target: { value: 'convex' } });
+    
+    const button = screen.getByText('Load GLB');
+    fireEvent.click(button);
+
+    const file = new File(['mock content'], 'test.glb', { type: 'model/gltf-binary' });
+    
+    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+    
+    Object.defineProperty(fileInput, 'files', {
+      value: [file],
+      writable: false,
+    });
+    
+    fireEvent.change(fileInput);
+
+    await waitFor(() => {
+      expect(mockOnLoadGLB).toHaveBeenCalledWith(expect.any(String), file, 'convex');
     });
   });
 });

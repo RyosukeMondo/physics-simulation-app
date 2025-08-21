@@ -177,3 +177,29 @@
   word-wrap: break-word;
   text-align: center;
 }
+
+.glb-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.collision-type-select {
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.collision-type-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.collision-type-select option {
+  background: #333;
+  color: white;
+}

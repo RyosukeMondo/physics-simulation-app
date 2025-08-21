@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 interface GLBLoaderProps {
-  onLoadGLB: (url: string, file: File) => void;
+  onLoadGLB: (url: string, file: File, collisionType?: 'box' | 'convex') => void;
   disabled?: boolean;
   className?: string;
 }
@@ -14,6 +14,7 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [collisionType, setCollisionType] = useState<'box' | 'convex'>('box');
 
   const handleFileSelect = () => {
     if (fileInputRef.current) {
@@ -45,8 +46,8 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
       // Create object URL for the file
       const url = URL.createObjectURL(file);
       
-      // Call the parent callback with the URL and file
-      onLoadGLB(url, file);
+      // Call the parent callback with the URL, file, and collision type
+      onLoadGLB(url, file, collisionType);
       
       setIsLoading(false);
       
@@ -71,14 +72,27 @@ const GLBLoader: React.FC<GLBLoaderProps> = ({
         disabled={disabled || isLoading}
       />
       
-      <button
-        className={`control-button load-glb ${isLoading ? 'loading' : ''}`}
-        onClick={handleFileSelect}
-        disabled={disabled || isLoading}
-        title={disabled ? "Resume simulation to load GLB models" : "Load a GLB or GLTF model file"}
-      >
-        {isLoading ? 'Loading...' : 'Load GLB'}
-      </button>
+      <div className="glb-controls">
+        <select
+          value={collisionType}
+          onChange={(e) => setCollisionType(e.target.value as 'box' | 'convex')}
+          disabled={disabled || isLoading}
+          className="collision-type-select"
+          title="Choose collision detection method"
+        >
+          <option value="box">Box Collision</option>
+          <option value="convex">Convex Hull</option>
+        </select>
+        
+        <button
+          className={`control-button load-glb ${isLoading ? 'loading' : ''}`}
+          onClick={handleFileSelect}
+          disabled={disabled || isLoading}
+          title={disabled ? "Resume simulation to load GLB models" : "Load a GLB or GLTF model file"}
+        >
+          {isLoading ? 'Loading...' : 'Load GLB'}
+        </button>
+      </div>
       
       {error && (
         <div className="error-message" style={{ 

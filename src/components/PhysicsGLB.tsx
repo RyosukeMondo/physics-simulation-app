@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useEffect, Suspense, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useRigidBody, ShapeType, BodyType } from 'use-ammojs';
 import * as THREE from 'three';
+import { createCollisionShapeFromGLB, validateCollisionShape } from '../utils/glbPhysics';
 
 interface PhysicsGLBProps {
   url: string;
@@ -12,6 +13,8 @@ interface PhysicsGLBProps {
   onLoad?: () => void;
   onError?: (error: Error) => void;
 }
+
+
 
 // Internal component that uses useGLTF
 const GLBModel: React.FC<PhysicsGLBProps> = ({
@@ -27,36 +30,109 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
   // Load GLB model using useGLTF hook
   const { scene } = useGLTF(url);
 
+  // Calculate collision shape data based on collision type
+  const collisionData = useMemo(() => {
+    if (!scene) return null;
+
+    try {
+      const shapeData = createCollisionShapeFromGLB(scene, collisionType, scale);
+      
+      if (!shapeData || !validateCollisionShape(shapeData)) {
+        console.warn('Invalid collision shape data, using fallback box');
+        return {
+          shapeType: ShapeType.BOX,
+          shapeConfig: {
+            halfExtents: new THREE.Vector3(0.5, 0.5, 0.5)
+          }
+        };
+      }
+
+      if (shapeData.shapeType === 'convex' && shapeData.vertices) {
+        // Note: use-ammojs may not support CONVEX_HULL shape type yet
+        // For now, we'll use BOX collision as a fallback for convex shapes
+        // TODO: Update when convex hull support is available
+        console.warn('Convex hull collision requested but not supported, using box collision');
+        return {
+          shapeType: ShapeType.BOX,
+          shapeConfig: {
+            halfExtents: new THREE.Vector3(1, 1, 1) // Default size for convex fallback
+          }
+        };
+      } else if (shapeData.shapeType === 'box' && shapeData.dimensions) {
+        return {
+          shapeType: ShapeType.BOX,
+          shapeConfig: {
+            halfExtents: new THREE.Vector3(
+              shapeData.dimensions[0] / 2,
+              shapeData.dimensions[1] / 2,
+              shapeData.dimensions[2] / 2
+            )
+          }
+        };
+      }
+
+      // Fallback
+      return {
+        shapeType: ShapeType.BOX,
+        shapeConfig: {
+          halfExtents: new THREE.Vector3(0.5, 0.5, 0.5)
+        }
+      };
+    } catch (err) {
+      console.error('Error calculating collision shape:', err);
+      // Fallback to simple box
+      return {
+        shapeType: ShapeType.BOX,
+        shapeConfig: {
+          halfExtents: new THREE.Vector3(0.5, 0.5, 0.5)
+        }
+      };
+    }
+  }, [scene, collisionType, scale]);
+
   // Notify when model is loaded
   useEffect(() => {
-    if (scene) {
+    if (scene && collisionData) {
       try {
-        // Calculate bounding box for future use (e.g., better collision detection)
-        const box = new THREE.Box3().setFromObject(scene);
-        const size = box.getSize(new THREE.Vector3());
-        
-        // For now, we use a simple box collision shape
-        // In the future, this could be used for more accurate collision detection
         onLoad?.();
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to process GLB model');
         onError?.(error);
       }
     }
-  }, [scene, scale, onLoad, onError]);
+  }, [scene, collisionData, onLoad, onError]);
 
-  // Create physics body using appropriate shape type
-  // For now, use BOX for all GLB models as convex hull may not be available
-  const [ref] = useRigidBody(() => ({
-    shapeType: ShapeType.BOX,
-    bodyType: mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
-    position,
-    mass,
-    material: {
-      friction: 0.4,
-      restitution: 0.3
+  // Create physics body using calculated collision shape
+  const [ref] = useRigidBody(() => {
+    if (!collisionData) {
+      // Fallback configuration
+      return {
+        shapeType: ShapeType.BOX,
+        bodyType: mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
+        position,
+        mass,
+        material: {
+          friction: 0.4,
+          restitution: 0.3
+        },
+        shapeConfig: {
+          halfExtents: new THREE.Vector3(0.5, 0.5, 0.5)
+        }
+      };
     }
-  }));
+
+    return {
+      shapeType: collisionData.shapeType,
+      bodyType: mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
+      position,
+      mass,
+      material: {
+        friction: 0.4,
+        restitution: 0.3
+      },
+      shapeConfig: collisionData.shapeConfig
+    };
+  });
 
   if (!scene) {
     return (

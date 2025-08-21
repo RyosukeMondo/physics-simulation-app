@@ -6,3 +6,4 @@ export { default as PhysicsGLB } from './PhysicsGLB';
 export { default as GLBLoader } from './GLBLoader';
 export { default as ControlPanel } from './ControlPanel';
 export { default as ObjectSpawner } from './ObjectSpawner';
+export { default as CollisionTestScene } from './CollisionTestScene';
