@@ -62,7 +62,10 @@ export const useSimulation = () => {
         threshold: PERFORMANCE_LIMITS.CLEANUP_THRESHOLD,
         toRemove 
       });
-      
+      // Pause physics during bulk removals to prevent use-ammojs from accessing
+      // matrixWorld on nodes that React is unmounting in the same frame
+      setIsRunning(false);
+
       setObjects(prev => {
         const filtered = prev.filter(obj => !toRemove.includes(obj.id));
         debugLogger.info('Objects after cleanup', { 
@@ -72,7 +75,9 @@ export const useSimulation = () => {
         });
         return filtered;
       });
-      
+      // Resume shortly after React commits the unmounts
+      setTimeout(() => setIsRunning(true), 50);
+
       setPerformanceWarnings(prev => [
         ...prev.filter(w => !w.includes('Auto-cleanup')),
         'Auto-cleanup performed to maintain performance'
@@ -141,7 +146,12 @@ export const useSimulation = () => {
   }, [objects, optimizer]);
 
   const removeObject = useCallback((id: string) => {
+    // Briefly pause physics to avoid race conditions where the physics loop
+    // reads a just-unmounted Three.js node (matrixWorld on null)
+    setIsRunning(false);
     setObjects(prev => prev.filter(obj => obj.id !== id));
+    // Resume next tick
+    setTimeout(() => setIsRunning(true), 50);
   }, []);
 
   const removeAllObjects = useCallback(() => {
