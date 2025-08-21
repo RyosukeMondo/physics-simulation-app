@@ -15,6 +15,8 @@ export interface SpawnedObject {
     mass?: number;
     color?: string;
     url?: string; // For GLB models
+    scale?: [number, number, number]; // For GLB models
+    collisionType?: 'box' | 'convex'; // For GLB models
   };
 }
 

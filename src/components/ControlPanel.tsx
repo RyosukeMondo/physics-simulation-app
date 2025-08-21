@@ -1,9 +1,11 @@
 import React from 'react';
+import GLBLoader from './GLBLoader';
 import './ControlPanel.css';
 
 interface ControlPanelProps {
   onAddBall: () => void;
   onAddBox: () => void;
+  onLoadGLB: (url: string, file: File) => void;
   onToggleSimulation: () => void;
   onReset: () => void;
   isRunning: boolean;
@@ -13,6 +15,7 @@ interface ControlPanelProps {
 const ControlPanel: React.FC<ControlPanelProps> = ({
   onAddBall,
   onAddBox,
+  onLoadGLB,
   onToggleSimulation,
   onReset,
   isRunning,
@@ -40,6 +43,11 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         >
           Add Square
         </button>
+        
+        <GLBLoader
+          onLoadGLB={onLoadGLB}
+          disabled={!isRunning}
+        />
       </div>
 
       <div className="button-group simulation-controls">

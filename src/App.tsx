@@ -12,10 +12,15 @@ function App() {
     resetKey,
     addBall,
     addBox,
+    addGLB,
     toggleSimulation,
     removeAllObjects,
     objectCount
   } = useSimulation();
+
+  const handleLoadGLB = (url: string, file: File) => {
+    addGLB(url, file);
+  };
 
   return (
     <div className="App" style={{ width: '100vw', height: '100vh', margin: 0, padding: 0, position: 'relative' }}>
@@ -26,6 +31,7 @@ function App() {
       <ControlPanel
         onAddBall={addBall}
         onAddBox={addBox}
+        onLoadGLB={handleLoadGLB}
         onToggleSimulation={toggleSimulation}
         onReset={removeAllObjects}
         isRunning={isRunning}

@@ -2,6 +2,7 @@ import React from 'react';
 import { SpawnedObject, ObjectType } from '../types/simulation';
 import PhysicsBall from './PhysicsBall';
 import PhysicsBox from './PhysicsBox';
+import PhysicsGLB from './PhysicsGLB';
 
 interface ObjectSpawnerProps {
   objects: SpawnedObject[];
@@ -32,6 +33,17 @@ const ObjectSpawner: React.FC<ObjectSpawnerProps> = ({ objects }) => {
                 color={obj.props?.color}
               />
             );
+          case ObjectType.GLB_MODEL:
+            return obj.props?.url ? (
+              <PhysicsGLB
+                key={obj.id}
+                url={obj.props.url}
+                position={obj.position}
+                scale={obj.props?.scale}
+                mass={obj.props?.mass}
+                collisionType={obj.props?.collisionType}
+              />
+            ) : null;
           default:
             return null;
         }
