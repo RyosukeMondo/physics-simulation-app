@@ -196,16 +196,21 @@ export const useSimulation = () => {
     setIsRunning(prev => !prev);
   }, []);
 
-  // Performance monitoring effect
+  // Performance monitoring effect - only update state if it actually changes
   useEffect(() => {
     const interval = setInterval(() => {
       // Clear old warnings periodically
-      setPerformanceWarnings(prev => 
-        prev.filter(warning => 
-          !warning.includes('Auto-cleanup') && 
+      setPerformanceWarnings(prev => {
+        const filtered = prev.filter(warning =>
+          !warning.includes('Auto-cleanup') &&
           !warning.includes('limit reached')
-        )
-      );
+        );
+        // Avoid unnecessary re-renders if nothing changed
+        if (filtered.length === prev.length && filtered.every((w, i) => w === prev[i])) {
+          return prev;
+        }
+        return filtered;
+      });
     }, 5000);
 
     return () => clearInterval(interval);

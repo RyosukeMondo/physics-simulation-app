@@ -18,6 +18,120 @@ interface PhysicsGLBProps {
   onError?: (error: SimulationError) => void;
 }
 
+// Extracted GLBInstance to stabilize component identity across re-renders.
+// Defining a component inside another function component creates a new type on every render,
+// which causes React to unmount/mount the child. That was resetting physics bodies.
+const GLBInstance: React.FC<{
+  instance: THREE.Group;
+  collisionData: any;
+  validatedProps: { position: [number, number, number]; mass: number; scale: [number, number, number] };
+  url: string;
+  scale: [number, number, number];
+  componentId: string;
+}> = ({ instance, collisionData, validatedProps, url, scale, componentId }) => {
+  // Keep latest values in refs to avoid unnecessary dependencies while preserving correctness
+  const collisionDataRef = useRef(collisionData);
+  const validatedPropsRef = useRef(validatedProps);
+  const urlRef = useRef(url);
+  const sceneInstanceRef = useRef(instance);
+  // Cache to preserve config object identity across unrelated re-renders
+  const cachedConfigRef = useRef<any | null>(null);
+  const prevSignatureRef = useRef<string>("");
+
+  // Sync refs on each render
+  collisionDataRef.current = collisionData;
+  validatedPropsRef.current = validatedProps;
+  urlRef.current = url;
+  sceneInstanceRef.current = instance;
+
+  // Stable factory using refs; reuses cached config when inputs are unchanged
+  const configFactory = useCallback(() => {
+    const latestCollision = collisionDataRef.current;
+    const latestProps = validatedPropsRef.current;
+    const latestUrl = urlRef.current;
+    const hasScene = !!sceneInstanceRef.current;
+
+    debugLogger.info(`Creating physics config for GLB ${componentId}`, {
+      collisionData: latestCollision,
+      validatedProps: latestProps,
+      url: latestUrl,
+      hasScene
+    });
+
+    const sigParts = [
+      latestCollision ? String(latestCollision.shapeType) : 'BOX',
+      latestCollision ? JSON.stringify(latestCollision.shapeConfig ?? {}) : JSON.stringify({ halfExtents: { x: 0.5, y: 0.5, z: 0.5 } }),
+      Array.isArray(latestProps?.position) ? latestProps.position.join(',') : '0,5,0',
+      String(latestProps?.mass ?? 1),
+      latestProps?.mass && latestProps.mass > 0 ? 'DYNAMIC' : 'STATIC'
+    ];
+    const signature = sigParts.join('|');
+
+    if (prevSignatureRef.current === signature && cachedConfigRef.current) {
+      debugLogger.info(`Reusing cached physics config for GLB ${componentId}`);
+      return cachedConfigRef.current;
+    }
+
+    let nextConfig: any;
+    if (!latestCollision) {
+      debugLogger.warn(`No collision data for GLB ${componentId}, using fallback box`);
+      nextConfig = {
+        shapeType: ShapeType.BOX,
+        bodyType: latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
+        position: latestProps.position,
+        mass: latestProps.mass,
+        material: {
+          friction: 0.4,
+          restitution: 0.3
+        },
+        shapeConfig: {
+          halfExtents: { x: 0.5, y: 0.5, z: 0.5 }
+        }
+      };
+    } else {
+      nextConfig = {
+        shapeType: latestCollision.shapeType,
+        bodyType: latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
+        position: latestProps.position,
+        mass: latestProps.mass,
+        material: {
+          friction: 0.4,
+          restitution: 0.3
+        },
+        shapeConfig: latestCollision.shapeConfig
+      };
+    }
+
+    cachedConfigRef.current = nextConfig;
+    prevSignatureRef.current = signature;
+    return nextConfig;
+  }, [componentId]);
+
+  const { ref, config, error: physicsError, hasError } = useSafeRigidBody(configFactory, componentId);
+
+  useEffect(() => {
+    if (hasError) {
+      debugLogger.error(`Physics error in GLB ${componentId}`, {
+        error: physicsError,
+        config,
+        url,
+        position: validatedProps.position
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasError]);
+
+  return (
+    <primitive
+      ref={ref}
+      object={instance}
+      scale={scale}
+      castShadow
+      receiveShadow
+    />
+  );
+};
+
 // Internal component that uses useGLTF
 const GLBModel: React.FC<PhysicsGLBProps> = ({
   url,
@@ -159,10 +273,14 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
       });
     }
 
+    const safeScale: [number, number, number] = Array.isArray(scale) && scale.length === 3
+      ? [scale[0], scale[1], scale[2]] as [number, number, number]
+      : [1, 1, 1];
+
     return {
       position: safePosition,
       mass: safeMass,
-      scale: scale && Array.isArray(scale) && scale.length === 3 ? scale : [1, 1, 1]
+      scale: safeScale
     };
   }, [position, mass, scale]);
 
@@ -171,90 +289,16 @@ const GLBModel: React.FC<PhysicsGLBProps> = ({
     return null;
   }
 
-  // Child component to safely create physics body once the scene instance exists
-  const GLBInstance: React.FC<{ instance: THREE.Group }> = ({ instance }) => {
-    // Keep latest values in refs to avoid unnecessary dependencies while preserving correctness
-    const collisionDataRef = useRef(collisionData);
-    const validatedPropsRef = useRef(validatedProps);
-    const urlRef = useRef(url);
-    const sceneInstanceRef = useRef(sceneInstance);
-
-    // Keep refs in sync with latest render values without extra hook deps
-    collisionDataRef.current = collisionData;
-    validatedPropsRef.current = validatedProps;
-    urlRef.current = url;
-    sceneInstanceRef.current = sceneInstance;
-
-    // We intentionally stabilize the factory; it reads latest values from refs.
-    const configFactory = useCallback(() => {
-      const latestCollision = collisionDataRef.current;
-      const latestProps = validatedPropsRef.current;
-      const latestUrl = urlRef.current;
-      const hasScene = !!sceneInstanceRef.current;
-
-      debugLogger.info(`Creating physics config for GLB ${componentIdRef.current}`, {
-        collisionData: latestCollision,
-        validatedProps: latestProps,
-        url: latestUrl,
-        hasScene
-      });
-
-      if (!latestCollision) {
-        debugLogger.warn(`No collision data for GLB ${componentIdRef.current}, using fallback box`);
-        return {
-          shapeType: ShapeType.BOX,
-          bodyType: latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
-          position: latestProps.position,
-          mass: latestProps.mass,
-          material: {
-            friction: 0.4,
-            restitution: 0.3
-          },
-          shapeConfig: {
-            halfExtents: { x: 0.5, y: 0.5, z: 0.5 }
-          }
-        };
-      }
-
-      return {
-        shapeType: latestCollision.shapeType,
-        bodyType: latestProps.mass > 0 ? BodyType.DYNAMIC : BodyType.STATIC,
-        position: latestProps.position,
-        mass: latestProps.mass,
-        material: {
-          friction: 0.4,
-          restitution: 0.3
-        },
-        shapeConfig: latestCollision.shapeConfig
-      };
-    }, []);
-
-    const { ref, config, error: physicsError, hasError } = useSafeRigidBody(configFactory, componentIdRef.current);
-
-    useEffect(() => {
-      if (hasError) {
-        debugLogger.error(`Physics error in GLB ${componentIdRef.current}`, { 
-          error: physicsError, 
-          config, 
-          url,
-          position: validatedProps.position
-        });
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [hasError]);
-
-    return (
-      <primitive
-        ref={ref}
-        object={instance}
-        scale={scale}
-        castShadow
-        receiveShadow
-      />
-    );
-  };
-
-  return <GLBInstance instance={sceneInstance} />;
+  return sceneInstance ? (
+    <GLBInstance
+      instance={sceneInstance}
+      collisionData={collisionData}
+      validatedProps={validatedProps}
+      url={url}
+      scale={scale}
+      componentId={componentIdRef.current}
+    />
+  ) : null;
 };
 
 // Error boundary component for GLB loading
